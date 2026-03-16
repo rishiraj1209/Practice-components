@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 
 const GlowingBorderCard = () => {
+    const [visible, setVisible] = useState(false);
+    const [position,setPosition] = useState({x:0, y:0});
+    const divRef = useRef(null);
+
+    const handleMouseMove = (e)=>{
+        const bounds = divRef.current.getBoundingClientRect();
+        setPosition({x: e.clientX - bounds.left, y: e.clientY - bounds.top})
+    }
+
   return (
     <div className='bg-gray-950 h-screen w-full py-20'>
-        <div className='relative w-80 h-96 mx-auto rounded-xl overflow-hidden cursor-pointer p-px bg-gray-900 text-gray-800 shadow-lg backdrop-blur-md'>
+        <div ref={divRef} onMouseMove={handleMouseMove} onMouseEnter={()=>{setVisible(true)}} onMouseLeave={()=>{setVisible(false)}} className='relative w-80 h-96 mx-auto rounded-xl overflow-hidden cursor-pointer p-px bg-gray-900 text-gray-800 shadow-lg backdrop-blur-md'>
+            <div className={`pointer-events-none absolute z-0 ${visible? 'opacity-100':'opacity-0'} bg-linear-to-r from-blue-500 via-indigo-500 to-purple-300 rounded-full blur-3xl size-60 transition-opacity duration-500`} style={{top:position.y - 120, left:position.x - 120}}/>
             <div className='relative z-10 flex flex-col items-center bg-gray-900/70 h-full w-full text-white rounded-[11px] p-8'>
                 <img className='h-30 w-30 rounded-full object-cover shadow-md' src="https://images.unsplash.com/photo-1615109398623-88346a601842?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Charlie Green" />
                 <h1 className='mt-6 text-2xl font-bold mb-2 '>Charlie Green</h1>
