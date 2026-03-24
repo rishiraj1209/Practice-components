@@ -9,17 +9,17 @@ const Hero = () => {
         <a href="https://prebuiltui.com">
             <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/prebuiltuiDummyLogo.svg" />
         </a>
-        <nav className={`max-md:absolute max-md:left-0 max-md:top-0 max-md:overflow-hidden max-md:h-full transition-[width] bg-white/50 backdrop:blur-md z-50 max-md:text-xl max-md:font-medium font-normal flex items-center justify-center flex-col md:flex-row gap-8 ${openMenu?'max-md:w-full':'max-md:w-0'}`}>
+        <nav className={`max-md:absolute max-md:left-0 max-md:top-0 max-md:overflow-hidden max-md:h-full transition-[width] bg-white/90 backdrop:blur-md z-50 max-md:text-xl max-md:font-medium font-normal flex items-center max-md:py-40 flex-col md:flex-row gap-8 ${openMenu?'max-md:w-full':'max-md:w-0'}`}>
           <a className='hover:text-violet-500 transition-all duration-200 text-neutral-800' href="#">Products</a>
           <a className='hover:text-violet-500 transition-all duration-200 text-neutral-800' href="#">Customer Stories</a>
           <a className='hover:text-violet-500 transition-all duration-200 text-neutral-800' href="#">Pricing</a>
           <a className='hover:text-violet-500 transition-all duration-200 text-neutral-800' href="#">Docs</a>
-          <button onClick={()=>{setOpenMenu(false)}} className='md:hidden text-neutral-700'><X/></button>
+          <button onClick={()=>{setOpenMenu(false)}} className='md:hidden text-neutral-700 cursor-pointer'><X/></button>
         </nav>
         <div className='flex items-center gap-8'>
           <button className='border rounded-lg p-2 border-gray-300 hover:bg-neutral-100 transition-all duration-200'><Sun className='w-5 h-5 text-neutral-700'/></button>
           <button className='max-md:hidden bg-indigo-600 text-white font-medium text-md px-6 py-2 rounded-full hover:bg-indigo-700 transition-all duration-200 cursor-pointer'>sign up</button>
-          <button onClick={()=>{setOpenMenu(true)}} className='md:hidden text-neutral-700'><MenuIcon/></button>
+          <button onClick={()=>{setOpenMenu(true)}} className='md:hidden text-neutral-700 cursor-pointer'><MenuIcon/></button>
         </div>
       </header>
       <main className='flex flex-col items-center max-w-7xl mx-auto w-full'>
