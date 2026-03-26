@@ -5,6 +5,7 @@ import FAQAccordian from './components/FAQAccordian'
 import Hero from './components/Hero'
 import Testimonials from './components/Testimonials'
 import TeamSection from './components/TeamSection'
+import ImageGallery from './components/imageGallery'
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       {/* <FAQAccordian/> */}
       {/* <Hero/> */}
       {/* <Testimonials/> */}
-      <TeamSection/>
+      {/* <TeamSection/> */}
+      <ImageGallery/>
     </div>
   )
 }
