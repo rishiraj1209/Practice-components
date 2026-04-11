@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Testimonials from './components/Testimonials'
 import TeamSection from './components/TeamSection'
 import ImageGallery from './components/imageGallery'
+import TeamIntroduction from './components/TeamIntroduction'
 
 const App = () => {
   return (
@@ -16,7 +17,8 @@ const App = () => {
       {/* <Hero/> */}
       {/* <Testimonials/> */}
       {/* <TeamSection/> */}
-      <ImageGallery/>
+      {/* <ImageGallery/> */}
+      <TeamIntroduction/>
     </div>
   )
 }
